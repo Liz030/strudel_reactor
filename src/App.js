@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StrudelMirror } from '@strudel/codemirror';
 import { evalScope } from '@strudel/core';
 import { drawPianoroll } from '@strudel/draw';
@@ -15,6 +15,7 @@ import SoundControl from './components/soundControls';
 import PlayButtons from './components/playButtons';
 import ProcButtons from './components/procButtons';
 import TextToPreprocess from './components/textToPreprocess';
+import Popup from './components/popUp';
 
 
 let globalEditor = null;
@@ -71,14 +72,38 @@ const handleD3Data = (event) => {
 export default function StrudelDemo() {
 
     const hasRun = useRef(false);
-
+    // working stop and play buttons
     const handlePlay = () => {
-        globalEditor.evaluate()            
+        globalEditor.evaluate()
     }
     const handleStop = () => {
         globalEditor.stop()
     }
 
+    const [songText, setSongText] = useState(stranger_tune)
+
+   
+   
+    const ProcAndPlay = () => {
+
+        globalEditor.evaluate()
+    }
+
+    //popup
+    const [showPopup, setShowPopup] = useState(false);
+    const popupButtonClick = () => {
+        setShowPopup(true);
+    }
+    const handleClosePopup = () => {
+        setShowPopup(false);
+    }
+
+    // checkbox
+    const [isChecked, setIsChecked] = useState(false);
+    const handleCheckboxChange = (e) => {
+        setIsChecked(e.target.checked);
+    };
+    
 
     useEffect(() => {
 
@@ -117,8 +142,8 @@ export default function StrudelDemo() {
             //SetupButtons()
             //Proc()
         }
-
-    }, []);
+        globalEditor.setCode(songText);
+    }, [songText]);
 
 
     return (
@@ -130,15 +155,17 @@ export default function StrudelDemo() {
                     <div className="row">
                         <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
 
-                            <TextToPreprocess/>
+                            <TextToPreprocess defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
 
                         </div>
                         <div className="col-md-4">
 
                             <nav>
-                                <ProcButtons />
-                                <br/>
+                                <ProcButtons onPressProc={ProcAndPlay} />
+                                <br />
                                 <PlayButtons onPlay={handlePlay} onStop={handleStop} />
+                                <button id="popup" class="btn btn-outline-success" onClick={popupButtonClick}> openPopup </button>
+                                <Popup show={showPopup} onClose={handleClosePopup} checked={isChecked} onChange={handleCheckboxChange} />
                             </nav>
                         </div>
                     </div>
@@ -148,7 +175,9 @@ export default function StrudelDemo() {
                             <div id="output" />
                         </div>
                         <div className="col-md-4">
-                            <SoundControl />
+
+
+                            
                         </div>
                     </div>
                 </div>

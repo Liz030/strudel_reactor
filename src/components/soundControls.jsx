@@ -1,4 +1,9 @@
-function SoundControls() {
+
+
+function SoundControls({ ProcAndPlay, isChecked, handleCheckboxChange }) {
+
+    
+
     return (
         <>
 
@@ -25,9 +30,11 @@ function SoundControls() {
                     </label>
             </div>
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="sound02" />
+                <input className="form-check-input" type="checkbox" value="" id="sound02" checked={isChecked} onChange={handleCheckboxChange} />
                 <label className="form-check-label" htmlFor="sound02">
-                        sound02
+                    sound02
+                    {isChecked && <p>box is checked</p>}
+                    {!isChecked && <p>box is NOT checked</p> }
                     </label>
             </div>
 
@@ -44,13 +51,13 @@ function SoundControls() {
 
 
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  defaultChecked />
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked={isChecked} onChange={ProcAndPlay} defaultChecked />
                 <label className="form-check-label" htmlFor="flexRadioDefault1">
                 p1: ON
                 </label>
             </div>
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  />
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={ProcAndPlay} />
                 <label className="form-check-label" htmlFor="flexRadioDefault2">
                 p1: HUSH
                 </label>
