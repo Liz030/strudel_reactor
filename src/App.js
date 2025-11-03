@@ -10,70 +10,75 @@ import { registerSoundfonts } from '@strudel/soundfonts';
 import { stranger_tune } from './tunes';
 import console_monkey_patch, { getD3Data } from './console-monkey-patch';
 
+
 import SoundControl from './components/soundControls';
 import PlayButtons from './components/playButtons';
 import ProcButtons from './components/procButtons';
 import TextToPreprocess from './components/textToPreprocess';
 
 
-
-
-
-// test for commit
 let globalEditor = null;
 
 const handleD3Data = (event) => {
     console.log(event.detail);
 };
 
-export function SetupButtons() {
+//export function SetupButtons() {
 
-    document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
-    document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
-    document.getElementById('process').addEventListener('click', () => {
-        Proc()
-    }
-    )
-    document.getElementById('process_play').addEventListener('click', () => {
-        if (globalEditor != null) {
-            Proc()
-            globalEditor.evaluate()
-        }
-    }
-    )
-}
+//    document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
+//    document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
+//    document.getElementById('process').addEventListener('click', () => {
+//        Proc()
+//    }
+//    )
+//    document.getElementById('process_play').addEventListener('click', () => {
+//        if (globalEditor != null) {
+//            Proc()
+//            globalEditor.evaluate()
+//        }
+//    }
+//    )
+//}
 
 
 
-export function ProcAndPlay() {
-    if (globalEditor != null && globalEditor.repl.state.started == true) {
-        console.log(globalEditor)
-        Proc()
-        globalEditor.evaluate();
-    }
-}
+//export function ProcAndPlay() {
+//    if (globalEditor != null && globalEditor.repl.state.started == true) {
+//        console.log(globalEditor)
+//        Proc()
+//        globalEditor.evaluate();
+//    }
+//}
 
-export function Proc() {
+//export function Proc() {
 
-    let proc_text = document.getElementById('proc').value
-    let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
-    ProcessText(proc_text);
-    globalEditor.setCode(proc_text_replaced)
-}
+//    let proc_text = document.getElementById('proc').value
+//    let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
+//    ProcessText(proc_text);
+//    globalEditor.setCode(proc_text_replaced)
+//}
 
-export function ProcessText(match, ...args) {
+//export function ProcessText(match, ...args) {
 
-    let replace = ""
-    if (document.getElementById('flexRadioDefault2').checked) {
-        replace = "_"
-    }
+//    let replace = ""
+//    if (document.getElementById('flexRadioDefault2').checked) {
+//        replace = "_"
+//    }
 
-    return replace
-}
+//    return replace
+//}
 
 export default function StrudelDemo() {
 
     const hasRun = useRef(false);
+
+    const handlePlay = () => {
+        globalEditor.evaluate()            
+    }
+    const handleStop = () => {
+        globalEditor.stop()
+    }
+
 
     useEffect(() => {
 
@@ -109,8 +114,8 @@ export default function StrudelDemo() {
             });
 
             document.getElementById('proc').value = stranger_tune
-            SetupButtons()
-            Proc()
+            //SetupButtons()
+            //Proc()
         }
 
     }, []);
@@ -124,15 +129,16 @@ export default function StrudelDemo() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+
                             <TextToPreprocess/>
-/>
+
                         </div>
                         <div className="col-md-4">
 
                             <nav>
                                 <ProcButtons />
-
-                                <PlayButtons />
+                                <br/>
+                                <PlayButtons onPlay={handlePlay} onStop={handleStop} />
                             </nav>
                         </div>
                     </div>
