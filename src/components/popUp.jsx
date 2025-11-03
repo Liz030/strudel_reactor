@@ -1,29 +1,17 @@
-import React from 'react'
-
-
 import SoundControl from './soundControls';
 
-
-
-function PopUp({ show, onClose, isChecked, handleCheckboxChange}) {
+// create pop up to display sound controlls
+function PopUp({ show, isChecked, handleCheckboxChange }) {
     if (!show) return null;
   return (
       <>
 
-          <div className='popup-overlay'>
-             
-                  <buton onClick={onClose} className='close=button'>Hide Text</buton>
-                 
-              <p>Music is currently playing</p>
+          <div className='popup-overlay'>  
+              <p>Music Controls:</p>
               <div className="col-md-4">
-
-
                   <SoundControl checked={isChecked} onChange={handleCheckboxChange} />
-              </div>
-              
-            
+              </div> 
           </div>
-
       </>
   );
 }

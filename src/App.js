@@ -15,6 +15,7 @@ import SoundControl from './components/soundControls';
 import PlayButtons from './components/playButtons';
 import ProcButtons from './components/procButtons';
 import TextToPreprocess from './components/textToPreprocess';
+import MusicControlButton from './components/musicControlButton';
 import Popup from './components/popUp';
 
 
@@ -72,6 +73,7 @@ const handleD3Data = (event) => {
 export default function StrudelDemo() {
 
     const hasRun = useRef(false);
+
     // working stop and play buttons
     const handlePlay = () => {
         globalEditor.evaluate()
@@ -80,28 +82,31 @@ export default function StrudelDemo() {
         globalEditor.stop()
     }
 
+
+    // save and re load textpool for song text
     const [songText, setSongText] = useState(stranger_tune)
 
-   
+    const proc = () => {
+           
+    }
    
     const ProcAndPlay = () => {
+        if (globalEditor != null && globalEditor.repl.state.started == true) {
 
-        globalEditor.evaluate()
+            globalEditor.evaluate()
+        }
     }
 
-    //popup
+    //MUSIC CONTROL button- popup toggle between showing and hiding control settings based on state
     const [showPopup, setShowPopup] = useState(false);
     const popupButtonClick = () => {
-        setShowPopup(true);
+        setShowPopup(!showPopup);
     }
-    const handleClosePopup = () => {
-        setShowPopup(false);
-    }
-
+    
     // checkbox
     const [isChecked, setIsChecked] = useState(false);
-    const handleCheckboxChange = (e) => {
-        setIsChecked(e.target.checked);
+    const handleCheckboxChange = () => {
+        setIsChecked(true);
     };
     
 
@@ -164,8 +169,18 @@ export default function StrudelDemo() {
                                 <ProcButtons onPressProc={ProcAndPlay} />
                                 <br />
                                 <PlayButtons onPlay={handlePlay} onStop={handleStop} />
-                                <button id="popup" class="btn btn-outline-success" onClick={popupButtonClick}> openPopup </button>
-                                <Popup show={showPopup} onClose={handleClosePopup} checked={isChecked} onChange={handleCheckboxChange} />
+
+
+
+                                SHOW MUSIC CONTROLS: This button below needs to be fixed- not working nested to ask, should work as below red button
+                                <MusicControlButton onClick={popupButtonClick} checked={isChecked} onChange={handleCheckboxChange} show={showPopup} />
+                                
+
+                               
+                                <button id="popup" class="btn btn-outline-danger" onClick={popupButtonClick}> {showPopup ? 'Hide Music Controls' : 'Show Music Controls'} </button>
+
+                                <Popup show={showPopup} checked={isChecked} onChange={handleCheckboxChange} />
+                                
                             </nav>
                         </div>
                     </div>
