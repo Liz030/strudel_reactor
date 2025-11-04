@@ -72,6 +72,14 @@ const handleD3Data = (event) => {
 
 export default function StrudelDemo() {
 
+    // save and re load textpool for song text
+    const [songText, setSongText] = useState(stranger_tune)
+
+    //// proc
+    
+    const songTextReplaced = songText.replace('setcps(140/60/4)', 'setcps(180/ 60 / 4)');
+   
+
     const hasRun = useRef(false);
 
     // working stop and play buttons
@@ -83,8 +91,7 @@ export default function StrudelDemo() {
     }
 
 
-    // save and re load textpool for song text
-    const [songText, setSongText] = useState(stranger_tune)
+   
 
     const proc = () => {
 
@@ -189,22 +196,15 @@ export default function StrudelDemo() {
 
 
                                 SHOW MUSIC CONTROLS: This button below needs to be fixed- not working nested to ask, should work as below red button
-                                <MusicControlButton onClick={popupButtonClick} checked={isChecked} onChange={handleCheckboxChange} show={showPopup} />
+                                <MusicControlButton onClick={popupButtonClick} checked={isChecked} show={showPopup ? 'Hide Music Controls' : 'Show Music Controls'} items={initialItems()} onChange={() => handleCheckboxChange(initialItems().id)} />
 
+                                <button id="popup" className="btn btn-outline-danger" onClick={popupButtonClick}> {showPopup ? 'Hide Music Controls' : 'Show Music Controls'} </button>
 
-
-                                <button id="popup" class="btn btn-outline-danger" onClick={popupButtonClick}> {showPopup ? 'Hide Music Controls' : 'Show Music Controls'} </button>
-
-                                <Popup show={showPopup} checked={isChecked} items={initialItems()} onChange={() => handleCheckboxChange(initialItems().id)} />
-
-                                <div>
-                                    {isChecked.map(item => (
-                                        <div key={item.id}>
-                                            <input className="form-check-input" type="checkbox"  onChange={() => handleCheckboxChange(item.id)} />
-                                            <label>{item.name}</label>
-                                        </div>
-                                    ))}
-                                </div>
+                                <Popup show={showPopup} checked={isChecked} items={isChecked} onItemClick={handleCheckboxChange} />
+                            
+                             
+                               
+                                
                             </nav>
                         </div>
                     </div>

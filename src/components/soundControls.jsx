@@ -1,6 +1,6 @@
 
 
-function SoundControls({ ProcAndPlay, isChecked, onChange, items, handleCheckboxChange }) {
+function SoundControls({isChecked, onChange, items, handleCheckboxChange , onItemClick}) {
 
     
 
@@ -11,8 +11,10 @@ function SoundControls({ ProcAndPlay, isChecked, onChange, items, handleCheckbox
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="basic-addon1">Set CPM</span>
                 </div>
-                <input type="text" className="form-control" id='cpm_text_imput' placeholder="120" aria-label="cpm" aria-describedby="cpm-label"/>
+                <input type="text" className="form-control" id='cpm_text_imput' placeholder="120" aria-label="cpm" aria-describedby="cpm-label" htmlFor='CPM_slider'/>
             </div>
+
+
 
             <div>
 
@@ -22,53 +24,19 @@ function SoundControls({ ProcAndPlay, isChecked, onChange, items, handleCheckbox
 
 
 
-
-            <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="sound01"/>
-                    <label className="form-check-label" htmlFor="sound01">
-                        sound01
-                    </label>
-            </div>
-            <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="sound02" checked={isChecked} />
-                <label className="form-check-label" htmlFor="sound02">
-                    
-                    {isChecked && <p>box is checked</p>}
-                    {!isChecked && <p>box is NOT checked</p> }
-                    </label>
-            </div>
-
-            <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="sound03"  />
-                <label className="form-check-label" htmlFor="sound03">
-                    sound03
-                </label>
-            </div>
-
-            asdf
             <div>
+                <p>mute selected instruments</p>
+                <div>
+                    {items.map((item) => (
+                        <li key={item.id}>
+                            <input className="form-check-input" type="checkbox" checked={item.checked} onClick={() => onItemClick(item.id)} />
+                            <label className="form-check-label" htmlFor={item.id}>{item.name}</label>
+                        </li>
 
-                {items.map((item) => (
-                    <li key={item.id}>
-                        <input className="form-check-input" type="checkbox" checked={item.checked} onChange={onChange} />
-                        <label>{item.name}</label>
-                    </li>
+                    ))}
+                </div>
+                
 
-                ))}
-            </div>
-            
-            sdfs
-            <div className="form-check">
-                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked={isChecked} onChange={ProcAndPlay} defaultChecked />
-                <label className="form-check-label" htmlFor="flexRadioDefault1">
-                p1: ON
-                </label>
-            </div>
-            <div className="form-check">
-                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={ProcAndPlay} />
-                <label className="form-check-label" htmlFor="flexRadioDefault2">
-                p1: HUSH
-                </label>
             </div>
         </>
   );
