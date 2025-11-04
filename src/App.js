@@ -87,9 +87,9 @@ export default function StrudelDemo() {
     const [songText, setSongText] = useState(stranger_tune)
 
     const proc = () => {
-           
+
     }
-   
+
     const ProcAndPlay = () => {
         if (globalEditor != null && globalEditor.repl.state.started == true) {
 
@@ -102,13 +102,28 @@ export default function StrudelDemo() {
     const popupButtonClick = () => {
         setShowPopup(!showPopup);
     }
-    
-    // checkbox
-    const [isChecked, setIsChecked] = useState(false);
-    const handleCheckboxChange = () => {
-        setIsChecked(true);
+
+    // checkboxes
+    const initialItems = () => (
+        [
+            { id: 1, name: 'item A', checked: false },
+            { id: 2, name: 'item B', checked: false },
+            { id: 3, name: 'item C', checked: false },
+            { id: 3, name: 'item D', checked: false },
+        ]
+    );
+
+
+    const [isChecked, setItems] = useState(initialItems);
+
+    const handleCheckboxChange = (id) => {
+        setItems(prevItems =>
+            prevItems.map(item =>
+                item.id === id ? { ...item, checked: !item.checked } : item
+            )
+        );
     };
-    
+
 
     useEffect(() => {
 
@@ -166,6 +181,7 @@ export default function StrudelDemo() {
                         <div className="col-md-4">
 
                             <nav>
+                                typing will auto proc, play will play as is
                                 <ProcButtons onPressProc={ProcAndPlay} />
                                 <br />
                                 <PlayButtons onPlay={handlePlay} onStop={handleStop} />
@@ -174,13 +190,21 @@ export default function StrudelDemo() {
 
                                 SHOW MUSIC CONTROLS: This button below needs to be fixed- not working nested to ask, should work as below red button
                                 <MusicControlButton onClick={popupButtonClick} checked={isChecked} onChange={handleCheckboxChange} show={showPopup} />
-                                
 
-                               
+
+
                                 <button id="popup" class="btn btn-outline-danger" onClick={popupButtonClick}> {showPopup ? 'Hide Music Controls' : 'Show Music Controls'} </button>
 
-                                <Popup show={showPopup} checked={isChecked} onChange={handleCheckboxChange} />
-                                
+                                <Popup show={showPopup} checked={isChecked} items={initialItems()} onChange={() => handleCheckboxChange(initialItems().id)} />
+
+                                <div>
+                                    {isChecked.map(item => (
+                                        <div key={item.id}>
+                                            <input className="form-check-input" type="checkbox"  onChange={() => handleCheckboxChange(item.id)} />
+                                            <label>{item.name}</label>
+                                        </div>
+                                    ))}
+                                </div>
                             </nav>
                         </div>
                     </div>
@@ -192,7 +216,7 @@ export default function StrudelDemo() {
                         <div className="col-md-4">
 
 
-                            
+
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 
 
-function SoundControls({ ProcAndPlay, isChecked, handleCheckboxChange }) {
+function SoundControls({ ProcAndPlay, isChecked, onChange, items, handleCheckboxChange }) {
 
     
 
@@ -30,9 +30,9 @@ function SoundControls({ ProcAndPlay, isChecked, handleCheckboxChange }) {
                     </label>
             </div>
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="sound02" checked={isChecked} onChange={handleCheckboxChange} />
+                <input className="form-check-input" type="checkbox" value="" id="sound02" checked={isChecked} />
                 <label className="form-check-label" htmlFor="sound02">
-                    sound02
+                    
                     {isChecked && <p>box is checked</p>}
                     {!isChecked && <p>box is NOT checked</p> }
                     </label>
@@ -45,11 +45,19 @@ function SoundControls({ ProcAndPlay, isChecked, handleCheckboxChange }) {
                 </label>
             </div>
 
+            asdf
+            <div>
 
+                {items.map((item) => (
+                    <li key={item.id}>
+                        <input className="form-check-input" type="checkbox" checked={item.checked} onChange={onChange} />
+                        <label>{item.name}</label>
+                    </li>
 
-
-
-
+                ))}
+            </div>
+            
+            sdfs
             <div className="form-check">
                 <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked={isChecked} onChange={ProcAndPlay} defaultChecked />
                 <label className="form-check-label" htmlFor="flexRadioDefault1">

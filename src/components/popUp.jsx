@@ -1,16 +1,19 @@
 import SoundControl from './soundControls';
 
 // create pop up to display sound controlls
-function PopUp({ show, isChecked, handleCheckboxChange }) {
+function PopUp({ show, isChecked, onChange, items,  }) {
     if (!show) return null;
+
+    
   return (
       <>
 
-          <div className='popup-overlay'>  
+          <div className='popup-overlay'> 
+           
               <p>Music Controls:</p>
-              <div className="col-md-4">
-                  <SoundControl checked={isChecked} onChange={handleCheckboxChange} />
-              </div> 
+
+              <SoundControl checked={isChecked} onChange={onChange} items={ items } />
+              
           </div>
       </>
   );
