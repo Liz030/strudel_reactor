@@ -1,6 +1,6 @@
 
 
-function SoundControls({isChecked, onChange, items, handleCheckboxChange , onItemClick}) {
+function SoundControls({ items , onItemClick}) {
 
     
 
@@ -16,22 +16,17 @@ function SoundControls({isChecked, onChange, items, handleCheckboxChange , onIte
 
 
 
-            <div>
-
-                <label htmlFor="volume_range" className="form-label">volume</label>
-                <input type="range" className="form-range" min="0" max="5" step="0.01" id="volume_range"/>
-            </div>
-
+      
 
 
             <div>
                 <p>mute selected instruments</p>
                 <div>
                     {items.map((item) => (
-                        <li key={item.id}>
+                        <div key={item.id}>
                             <input className="form-check-input" type="checkbox" checked={item.checked} onClick={() => onItemClick(item.id)} />
-                            <label className="form-check-label" htmlFor={item.id}>{item.name}</label>
-                        </li>
+                            <label className="form-check-label" htmlFor={item.id}>itemName:{item.name} itemValue: {item.value} { item.checked ? 'checked' : "not checked"}</label>
+                        </div>
 
                     ))}
                 </div>
