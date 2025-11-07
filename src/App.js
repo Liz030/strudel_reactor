@@ -172,9 +172,7 @@ export default function StrudelDemo() {
      
     };
 
-    const state = {
-        initialItems: []
-    }
+   
 
 
     // store array to json - stored local storage
@@ -387,23 +385,27 @@ export default function StrudelDemo() {
             <h2>Strudel Demo</h2>
             <main>
 
-                <div className="container-fluid">
+                <div class='container-fluid'>
                     <div className="row">
-                        <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-
-                            <TextToPreprocess defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
-                        </div>
-
-
-                        <div className="col-md-4">
-                            
+                        <div className="col-sm">
+                           collum 1 of 2
                             <div className="row">
-                                <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                                1 row 1
+                                <div className="row-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                                    <TextToPreprocess defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
+                                </div>
+                            </div>
+                            <div className="row">
+                                1 row 2
+                                <div className="row-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
                                     <div id="editor" />
                                     <div id="output" />
                                 </div>
+
                             </div>
-                               
+                        </div>
+                        <div className="col-sm">
+                           collum 2 of 3
                             <div className="graphContainer">
                                 <h1> RNG out: rngNumber </h1>
 
@@ -454,10 +456,13 @@ export default function StrudelDemo() {
 
                             </nav>
                         </div>
-                    </div>
-                   
 
+                    </div>
                 </div>
+
+
+
+               
                 <canvas id="roll"></canvas>
             </main >
         </div >
