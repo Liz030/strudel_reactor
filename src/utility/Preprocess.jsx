@@ -1,12 +1,13 @@
-export function Preprocess({ inputText, volume }) {
+export function Preprocess({ inputText, volume, cpm }) {
 
     let outputText = inputText;
-    outputText += `\n//all(x => x.gain(${volume}))`
+    outputText += `\n//all(x => x.gain(${volume})) \n//all(setcps(${cpm}/60/4)`
     outputText = outputText.replaceAll("{$VOLUME}", volume)
-    let regex = /[a-zA-Z0-9_]+:\s*\n[\s\S]+?\r?\n(?=[a-zA-Z0-9_]*[:\/])/gm;
-
+    outputText = outputText.replaceAll("{$CPM}", cpm)
+    let regex = /[a-zA-Z0-9_]+:*\s*\n[\s\S]+?\r?\n(?=[a-zA-Z0-9_]*[:\/])/gm;
     let m;
     let matches = []
+
 
     while ((m = regex.exec(outputText)) !== null) {
 
@@ -17,13 +18,20 @@ export function Preprocess({ inputText, volume }) {
         m.forEach((match, groupIndex) => {
             matches.push(match)
         });
+        
 
     }
 
     let matches2 = matches.map(
         match => match.replaceAll(/(?<!post)gain\(([\d.]+)\)/g, (match, captureGroup) =>
             `gain(${captureGroup}*${volume})`
-        )
+        ),
+
+        match => match.replaceAll(/setcps\(([\d.]+)\)/g, (match, captureGroup)=>
+            `setcps(${cpm}/60/4)`
+        ),
+
+
     );
 
     let matches3 = matches.reduce(

@@ -80,8 +80,7 @@ export default function StrudelDemo() {
     // save and re load textpool for song text
     const [songText, setSongText] = useState(stranger_tune)
 
-    const [cpm, setCpm] = useState('');
-    const cpmNumber = Number(cpm);
+    
 
 
     const hasRun = useRef(false);
@@ -89,7 +88,7 @@ export default function StrudelDemo() {
     // working stop and play buttons
     const handlePlay = () => {
 
-        let outputText = Preprocess({ inputText: procText, volume: volume });
+        let outputText = Preprocess({ inputText: procText, volume: volume, cpm: cpm });
         globalEditor.setCode(outputText);
 
         globalEditor.evaluate()
@@ -158,10 +157,14 @@ export default function StrudelDemo() {
     }
 
     // volume slider
-
     const [procText, setProcText] = useState(stranger_tune)
+
     const [volume, setVolume] = useState(1);
     const [state, setState] = useState("stop");
+
+    //cpm value
+    const [cpm, setCpm] = useState(120);
+
 
     useEffect(() => {
         if (state === "play") {
@@ -347,7 +350,7 @@ export default function StrudelDemo() {
 
                 <div class='container-fluid'>
                     <div className="row">
-                        <div className="col-sm">
+                        <div className="col-sm-8">
                            collum 1 of 2
                             <div className="row">
                                 1 row 1
@@ -386,7 +389,7 @@ export default function StrudelDemo() {
                                                          
                                 <button id="accordian" className="btn btn-outline-danger" onClick={popupButtonClick}> {showPopup ? 'Hide Music Controls' : 'Show Music Controls'} </button>
 
-                                <Popup show={showPopup} checked={isChecked} items={isChecked} onItemClick={handleCheckboxChange} onVolumeChange={ (e)=> setVolume(e.target.value)} />
+                                <Popup show={showPopup} checked={isChecked} items={isChecked} onItemClick={handleCheckboxChange} onVolumeChange={(e) => setVolume(e.target.value)} onCPMChange={(e) => setCpm(e.target.value)}   />
 
 
 

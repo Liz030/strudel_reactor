@@ -1,8 +1,10 @@
-export const stranger_tune = `setcps(140/60/4)
+export const stranger_tune = `
 
 samples('github:algorave-dave/samples')
 samples('https://raw.githubusercontent.com/tidalcycles/Dirt-Samples/master/strudel.json')
 samples('https://raw.githubusercontent.com/Mittans/tidal-drum-machines/main/machines/tidal-drum-machines.json')
+setcps(120/60/4)
+
 
 const gain_patterns = [
   "2",

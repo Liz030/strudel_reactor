@@ -1,17 +1,24 @@
 
 
-function SoundControls({ items , onItemClick}) {
+function SoundControls({ items, onItemClick, onVolumeChange, onCPMChange }) {
 
     
 
     return (
         <>
 
+            <div>
+
+                <label htmlFor="volume_range" className="form-label">volume</label>
+                <input type="range" className="form-range" min="0" max="2" step="0.01" onMouseUp={onVolumeChange} id="volume_range" />
+            </div>
+
+
             <div className="input-group mb-3">
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="basic-addon1">Set CPM</span>
                 </div>
-                <input type="text" className="form-control" id='cpm_text_imput' placeholder="120" aria-label="cpm" aria-describedby="cpm-label" htmlFor='CPM_slider'/>
+                <input type="text" className="form-control" id='cpm_text_imput' onChange={onCPMChange} placeholder="120" aria-label="cpm" aria-describedby="cpm-label" htmlFor='CPM_slider'/>
             </div>
 
 
