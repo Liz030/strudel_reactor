@@ -24,7 +24,7 @@ function SoundControls({ items , onItemClick}) {
                 <div>
                     {items.map((item) => (
                         <div key={item.id}>
-                            <input className="form-check-input" type="checkbox" checked={item.checked} onClick={() => onItemClick(item.id)} />
+                            <input className="form-check-input" type="checkbox" checked={item.checked} onChange={() => onItemClick(item.id)} />
                             <label className="form-check-label" htmlFor={item.id}>itemName:{item.name} itemValue: {item.value} { item.checked ? 'checked' : "not checked"}</label>
                         </div>
 

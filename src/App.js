@@ -18,7 +18,7 @@ import TextToPreprocess from './components/textToPreprocess';
 import MusicControlButton from './components/musicControlButton';
 import Popup from './components/popUp';
 
-
+import * as d3 from "d3";
 
 
 
@@ -90,29 +90,7 @@ export default function StrudelDemo() {
 
     //save
 
-    const saveSettings = (settings) => {
-        localStorage.setItem('userSettings', JSON.stringify(settings))
-    };
-
-    //load
-    const loadSettings = () => {
-        const storedSettings = localStorage.getItem('userSettings');
-        return storedSettings ? JSON.parse(storedSettings) : null;
-    };
-
-    const [settings, setSettings] = useState(() => {
-        const saved = loadSettings();
-        return saved || { notifications: true };
-    });
-
-    useEffect(() => {
-        saveSettings(settings);
-    }, [settings]);
-
-    const handleChange = (newChanges) => {
-        setSettings(prev => ({ ...prev, isChecked, newChanges }))
-    }
-
+  
 
     const Proc = () => {
 
@@ -160,12 +138,6 @@ export default function StrudelDemo() {
     }
 
    
-
-    const saveStateToLocalStorate = () => {
-        localStorage.setItem("initialItems", JSON.stringify(this.initialItems));
-    }
-
-
 
     
 
@@ -235,7 +207,139 @@ export default function StrudelDemo() {
             .then(data => this.setState({ isChecked: data }))
     };
 
+    //get d3 data
+    const d3Data = () => {
+           
+    }
 
+
+
+    ////D3 GRAPH
+    //const [rngNumber, setRngNumber] = useState(0);
+    //const [rngArray, setRngArray] = useState([]);
+    //const maxItems = 50;
+    //const timeOut = 100;
+    //const maxValue = 1;
+
+
+    //useEffect(() => {
+    //    const interval = setInterval(() => {
+    //        //setRngNumber(Math.floor(Math.random() * maxValue));
+    //        setRngNumber('getD3Data')
+
+    //    }, timeOut);
+
+    //    return () => clearInterval(interval);
+
+
+    //}, []);
+    //function LogToNum(input) {
+
+    //    if (!input) { return 0 };
+    //    var stringArray = input.split(/(\s+)/);
+    //    for (const item of stringArray) {
+            
+    //        if (item.startsWith('gain')) {
+    //            let val = item.substring(5)
+    //            return Number(val)
+    //        }
+    //    }
+    //        return 0;
+    //}
+    //useEffect(() => {
+    //    let tempArray = [...rngArray, rngNumber];
+    //    if (tempArray.length > maxItems) { tempArray.shift() }
+    //    setRngArray(tempArray);
+    //}, [rngNumber]);
+
+    //useEffect(() => {
+    //    //select svg element
+    //    const svg = d3.select('svg')
+    //    svg.selectAll("*").remove();
+
+       
+
+    //    // height and width
+    //    let w= svg.node().getBoundingClientReact().width
+    //    w=w - 40
+    //    let h = svg.node().getBoundingclientReact().height
+    //    h=h-25
+    //    const barMargin = 10;
+    //    const barWidth = w / rngArray.length
+
+    //    // Yscale
+    //    let yScale = d3.scaleLinear()
+    //        .domain([0, maxValue])
+    //        .range([h, 0]);
+
+    //    //translate bar to give axs room
+    //    const chartGroup = svg.append('g')
+    //        .classed('chartGroup', true)
+    //        .attr('transform', 'translate(30, 3)');
+
+    //    let barGroups = svg.selectAll('g')
+    //        .data(rngArray)
+
+    //    //add groups
+    //    let newBarGroups = barGroups.enter()
+    //        .append('g')
+    //        .attr('transform', (d, i) => {
+    //            return `translate(${i*barWidth}, ${yScale(d)})`
+    //        });
+
+    //    //// rectangle draw
+    //    //newBarGroups
+    //    //    .append('rect')
+    //    //    .attr('x', 0)
+    //    //    .attr('height', d => { return h - yScale(d) })
+    //    //    .attr('width', barWidth - barMargin)
+    //    //    .attr('fill', 'black')
+
+    //    // colour lines
+    //    //const colourScale = d3.scaleSequential(d2.interpolateRgb('Lime', 'Red'))
+    //    //.domain([0, maxValue])
+
+    //    // set gradient
+    //    chartGroup.append("linearGradient")
+    //        .attr("id", "line-gradient")
+    //        .attr("gradientUnits", "userSpaceOnUse")
+    //        .attr("x1", 0)
+    //        .attr("y1", yScale(0))
+    //        .attr("x2", 0)
+    //        .attr("y2", yScale(maxValue))
+    //        .selectAll("stop")
+    //        .data([
+    //            { offset: "0%", color: "green" },
+    //            {offset: "100%", color: "red"}
+            
+
+    //        ])
+    //        .enter().append("stop")
+    //        .attr("offfset", function (d) { return d.offset; })
+    //        .attr("stop-color", function (d) { return d.color; });
+
+    //    // lines
+    //    chartGroup
+    //        .append('path')
+    //        .datum(rngArray.map((d) => LogToNum(d)))
+    //        .attr('fill', 'none')
+    //        .attr('stroke', 'url(#line-gradient')
+    //        .attr('stroke-width', 1.5)
+    //        .attr('d', d3.line()
+    //            .x((d, i) => i * barWidth)
+    //            .y((d) => yScale(d))
+    //        )
+
+    //    // add yaxis to chart group
+    //    let yAxis = d3.axisLeft(yScale);
+    //    chartGroup.append('g')
+    //        .classed('axis y', true)
+    //        .call(yAxis);
+
+    //}, [rngArray]);
+
+
+    ////D# GRAH END
 
     useEffect(() => {
 
@@ -292,6 +396,23 @@ export default function StrudelDemo() {
 
 
                         <div className="col-md-4">
+                            
+                            <div className="row">
+                                <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                                    <div id="editor" />
+                                    <div id="output" />
+                                </div>
+                            </div>
+                               
+                            <div className="graphContainer">
+                                <h1> RNG out: rngNumber </h1>
+
+                            </div>
+
+                            <div>
+                                <svg width='100%' height='600px' class="border border-primary rounded p-2"></svg>
+                            </div>
+
 
                             <nav>
                                 typing will auto proc, play will play as is
@@ -334,12 +455,7 @@ export default function StrudelDemo() {
                             </nav>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                            <div id="editor" />
-                            <div id="output" />
-                        </div>
-                    </div>
+                   
 
                 </div>
                 <canvas id="roll"></canvas>
