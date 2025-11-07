@@ -19,6 +19,7 @@ import MusicControlButton from './components/musicControlButton';
 import Popup from './components/popUp';
 
 import * as d3 from "d3";
+import { Preprocess } from './utility/Preprocess';
 
 
 
@@ -79,40 +80,6 @@ export default function StrudelDemo() {
     // save and re load textpool for song text
     const [songText, setSongText] = useState(stranger_tune)
 
-    // proc
-    //const ProcAndPlay = () => {
-    //    if (globalEditor != null && globalEditor.repl.state.started == true) {
-    //        console.log(globalEditor)
-    //        Proc()
-    //        globalEditor.evaluate();
-    //    }
-    //}
-
-    //save
-
-  
-
-    const Proc = () => {
-
-        let proc_text = document.getElementById('proc').value
-        let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
-        ProcessText(proc_text);
-        globalEditor.setCode(proc_text_replaced)
-    }
-
-    const ProcessText=(match, ...args) => {
-
-        let replace = ""
-        if (document.getElementById(handleCheckboxChange).checked) {
-            replace = "_"
-        }
-
-        return replace
-    }
-
-
-    const songTextReplaced = songText.replace('setcps(140/60/4)', 'setcps(180/ 60 / 4)');
-
     const [cpm, setCpm] = useState('');
     const cpmNumber = Number(cpm);
 
@@ -121,15 +88,19 @@ export default function StrudelDemo() {
 
     // working stop and play buttons
     const handlePlay = () => {
+
+        let outputText = Preprocess({ inputText: procText, volume: volume });
+        globalEditor.setCode(outputText);
+
         globalEditor.evaluate()
     }
     const handleStop = () => {
         globalEditor.stop()
     }
 
-
-
-    
+    //const d3Data = () => {
+    //    console.getD3Data;
+    //}
 
     //MUSIC CONTROL button- popup toggle between showing and hiding control settings based on state
     const [showPopup, setShowPopup] = useState(false);
@@ -137,13 +108,8 @@ export default function StrudelDemo() {
         setShowPopup(!showPopup);
     }
 
-   
-
-    
-
-    
-
-    // checkboxes
+ 
+    // checkboxes - mute instruments
     const initialItems = () => (
         [
             { id: 1, value: 'drums:', originalState: 'drums:', name: 'item A', checked: false },
@@ -159,22 +125,17 @@ export default function StrudelDemo() {
 
     // change value and checked based on check value to silence
     const handleCheckboxChange = (id) => {
-        
 
         setItems(
             prevItems =>
                 prevItems.map(item =>
                     item.id === id ? { ...item, value: item.checked ? item.originalState : '_' + item.originalState, checked: !item.checked } : item)
-
-            
+ 
         );
 
-     
     };
 
-   
-
-
+  
     // store array to json - stored local storage
     const storeArrayItemsJson = () => {
         const jsonString = JSON.stringify(isChecked);
@@ -196,21 +157,20 @@ export default function StrudelDemo() {
         }
     }
 
+    // volume slider
 
+    const [procText, setProcText] = useState(stranger_tune)
+    const [volume, setVolume] = useState(1);
+    const [state, setState] = useState("stop");
 
+    useEffect(() => {
+        if (state === "play") {
+            handlePlay();
 
-    const getStateFromLocalStorage = () => {
-        fetch('settings.json')
-            .then(response => response.json())
-            .then(data => this.setState({ isChecked: data }))
-    };
-
-    //get d3 data
-    const d3Data = () => {
-           
-    }
-
-
+}
+    },[volume])
+    //regex
+   
 
     ////D3 GRAPH
     //const [rngNumber, setRngNumber] = useState(0);
@@ -219,11 +179,11 @@ export default function StrudelDemo() {
     //const timeOut = 100;
     //const maxValue = 1;
 
-
+    //// get d3 data is function call, call it here to input the out put array from getd3 data.
     //useEffect(() => {
     //    const interval = setInterval(() => {
     //        //setRngNumber(Math.floor(Math.random() * maxValue));
-    //        setRngNumber('getD3Data')
+    //        setRngNumber(getD3Data());
 
     //    }, timeOut);
 
@@ -337,7 +297,7 @@ export default function StrudelDemo() {
     //}, [rngArray]);
 
 
-    ////D# GRAH END
+    //////D# GRAH END
 
     useEffect(() => {
 
@@ -417,39 +377,16 @@ export default function StrudelDemo() {
 
 
                             <nav>
-                                typing will auto proc, play will play as is
-                                <ProcButtons />
-                                <br />
-                                <PlayButtons onPlay={handlePlay} onStop={handleStop} />
+                               
+                                <PlayButtons onPlay={() => { setState("play"); handlePlay() }} onStop={() => {handleStop()}} />
 
 
                                 <button className="btn btn-light" onClick={storeArrayItemsJson} >Save State to local storage </button>
                                 <button className="btn btn-dark" onClick={loadArrayItemsJson} >load State to local storage </button>
-
-
-
-                                <div>
-
-                                    <label htmlFor="volume_range" className="form-label">volume</label>
-                                    <input type="range" className="form-range" min="0" max="5" step="0.01" id="volume_range" />
-                                </div>
-
-                                <div className="input-group mb-3">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text" id="basic-addon1">Set CPM</span>
-                                    </div>
-                                    <input type="text" className="form-control" id='cpm_text_imput' placeholder="120" aria-label="cpm" aria-describedby="cpm-label" htmlFor='CPM_slider' />
-                                </div>
-
-
-
-
-                                SHOW MUSIC CONTROLS: This button below needs to be fixed- not working nested to ask, should work as below red button
-                                <MusicControlButton onClick={popupButtonClick} checked={isChecked} show={showPopup ? 'Hide Music Controls' : 'Show Music Controls'} items={initialItems()} onChange={() => handleCheckboxChange(initialItems().id)} />
-
+                                                         
                                 <button id="accordian" className="btn btn-outline-danger" onClick={popupButtonClick}> {showPopup ? 'Hide Music Controls' : 'Show Music Controls'} </button>
 
-                                <Popup show={showPopup} checked={isChecked} items={isChecked} onItemClick={handleCheckboxChange} />
+                                <Popup show={showPopup} checked={isChecked} items={isChecked} onItemClick={handleCheckboxChange} onVolumeChange={ (e)=> setVolume(e.target.value)} />
 
 
 

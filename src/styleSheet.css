@@ -1,0 +1,7 @@
+function styleSheet() {
+  return (
+    <p>Hello world!</p>
+  );
+}
+
+export default styleSheet;
