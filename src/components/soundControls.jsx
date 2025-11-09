@@ -18,7 +18,7 @@ function SoundControls({ items, onItemClick, onVolumeChange, onCPMChange }) {
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="basic-addon1">Set CPM</span>
                 </div>
-                <input type="text" className="form-control" id='cpm_text_imput' onChange={onCPMChange} placeholder="120" aria-label="cpm" aria-describedby="cpm-label" htmlFor='CPM_slider'/>
+                <input type="text" className="form-control" id='cpm_text_imput' onChange={onCPMChange} placeholder="120" aria-label="cpm" aria-describedby="cpm-label" htmlFor='CPM_slider' />
             </div>
 
 

@@ -160,10 +160,13 @@ export default function StrudelDemo() {
     const [procText, setProcText] = useState(stranger_tune)
 
     const [volume, setVolume] = useState(1);
-    const [state, setState] = useState("stop");
+
 
     //cpm value
     const [cpm, setCpm] = useState(120);
+    const [state, setState] = useState("stop");
+
+    
 
 
     useEffect(() => {
@@ -171,7 +174,7 @@ export default function StrudelDemo() {
             handlePlay();
 
 }
-    },[volume])
+    },[volume, cpm])
     //regex
    
 
@@ -381,7 +384,7 @@ export default function StrudelDemo() {
 
                             <nav>
                                
-                                <PlayButtons onPlay={() => { setState("play"); handlePlay() }} onStop={() => {handleStop()}} />
+                                <PlayButtons onPlay={() => { setState("play"); handlePlay() }} onStop={() => { setState("stop");  handleStop()}} />
 
 
                                 <button className="btn btn-light" onClick={storeArrayItemsJson} >Save State to local storage </button>

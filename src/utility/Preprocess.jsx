@@ -1,7 +1,7 @@
 export function Preprocess({ inputText, volume, cpm }) {
 
     let outputText = inputText;
-    outputText += `\n//all(x => x.gain(${volume})) \n//all(setcps(${cpm}/60/4)`
+    outputText += `\n//all(x => x.gain(${volume})) \nsetcps(${cpm}/60/4)`
     outputText = outputText.replaceAll("{$VOLUME}", volume)
     outputText = outputText.replaceAll("{$CPM}", cpm)
     let regex = /[a-zA-Z0-9_]+:*\s*\n[\s\S]+?\r?\n(?=[a-zA-Z0-9_]*[:\/])/gm;
