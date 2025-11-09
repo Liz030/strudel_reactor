@@ -88,7 +88,7 @@ export default function StrudelDemo() {
     // working stop and play buttons
     const handlePlay = () => {
 
-        let outputText = Preprocess({ inputText: procText, volume: volume, cpm: cpm });
+        let outputText = Preprocess({ inputText: procText, volume: volume, cpm: cpm, instruments: instruments});
         globalEditor.setCode(outputText);
 
         globalEditor.evaluate()
@@ -111,15 +111,18 @@ export default function StrudelDemo() {
     // checkboxes - mute instruments
     const initialItems = () => (
         [
-            { id: 1, value: 'drums:', originalState: 'drums:', name: 'item A', checked: false },
-            { id: 2, value: 'drums2:', originalState: 'drums2:', name: 'item B', checked: false },
-            { id: 3, value: 'main_arp:', originalState: 'main_arp:', name: 'item C', checked: false },
-            { id: 4, value: 'bassline:', originalState: 'bassline:', name: 'item D', checked: false },
+            { id: 1, value: 'drums:', replace: '_drums:', mutedItem: '_drums:', name: 'drums:', checked: false },
+            { id: 2, value: 'drums2:', replace: '_drums2:', mutedItem: '_drums2:', name: 'drums2:', checked: false },
+            { id: 3, value: 'main_arp:', replace: '_main_arp:', mutedItem: '_main_arp:', name: 'main_arp:', checked: false },
+            { id: 4, value: 'bassline:', replace: '_bassline:', mutedItem: '_bassline:', name: 'bassline:', checked: false },
+
         ]
     );
 
 
-    const [isChecked, setItems] = useState(initialItems);
+    
+
+    const [instruments, setItems] = useState(initialItems);
 
 
     // change value and checked based on check value to silence
@@ -128,7 +131,13 @@ export default function StrudelDemo() {
         setItems(
             prevItems =>
                 prevItems.map(item =>
-                    item.id === id ? { ...item, value: item.checked ? item.originalState : '_' + item.originalState, checked: !item.checked } : item)
+                    item.id === id ? {
+                        ...item,
+                        value: item.checked ? item.name : item.mutedItem,
+                        replace: item.checked ? item.mutedItem : item.name,
+                        checked: !item.checked
+
+                    } : item)
  
         );
 
@@ -137,7 +146,7 @@ export default function StrudelDemo() {
   
     // store array to json - stored local storage
     const storeArrayItemsJson = () => {
-        const jsonString = JSON.stringify(isChecked);
+        const jsonString = JSON.stringify(instruments);
         localStorage.setItem('checkedItems', jsonString);
 
     };
@@ -174,7 +183,7 @@ export default function StrudelDemo() {
             handlePlay();
 
 }
-    },[volume, cpm])
+    }, [volume, cpm, instruments])
     //regex
    
 
@@ -384,7 +393,7 @@ export default function StrudelDemo() {
 
                             <nav>
                                
-                                <PlayButtons onPlay={() => { setState("play"); handlePlay() }} onStop={() => { setState("stop");  handleStop()}} />
+                                <PlayButtons onPlay={() => { setState("play"); handlePlay() }} onStop={() => { setState("stop"); handleStop()}} />
 
 
                                 <button className="btn btn-light" onClick={storeArrayItemsJson} >Save State to local storage </button>
@@ -392,10 +401,10 @@ export default function StrudelDemo() {
                                                          
                                 <button id="accordian" className="btn btn-outline-danger" onClick={popupButtonClick}> {showPopup ? 'Hide Music Controls' : 'Show Music Controls'} </button>
 
-                                <Popup show={showPopup} checked={isChecked} items={isChecked} onItemClick={handleCheckboxChange} onVolumeChange={(e) => setVolume(e.target.value)} onCPMChange={(e) => setCpm(e.target.value)}   />
+                                <Popup show={showPopup} checked={instruments} items={instruments} onItemClick={handleCheckboxChange} onVolumeChange={(e) => setVolume(e.target.value)} onCPMChange={(e) => setCpm(e.target.value)}   />
 
 
-
+                                
 
                             </nav>
                         </div>
