@@ -1,11 +1,15 @@
 export function Preprocess({ inputText, volume, cpm, instruments }) {
 
     let outputText = inputText;
+
+    // debug checks for controllers
     outputText += `\n//all(x => x.gain(${volume}))`
 
     outputText += `\nsetcps(${cpm}/60/4)`
 
     outputText += `\n //text is checked: ${instruments.map((items) => items.name)}`
+
+
 
     //mute checkboxes for instruments
 
@@ -13,10 +17,6 @@ export function Preprocess({ inputText, volume, cpm, instruments }) {
         outputText = outputText.replaceAll(instruments[i].replace, instruments[i].value)   
     }
 
-   
-
-    
-   
     outputText = outputText.replaceAll("{$VOLUME}", volume)
     outputText = outputText.replaceAll("{$CPM}", cpm)
 
