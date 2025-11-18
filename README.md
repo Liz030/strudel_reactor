@@ -4,12 +4,14 @@ play: plays the text to process- starts music\
 stop: stops the music\
 Show music contols: a drop down menu containing buttons and sliders to adjust the music- this can be done live\
 Adjust volume slider: a slider to control the master volume of the music played, a multiplyer on the gain of each instrument\
-set cpm: input a value to change the tempo, this can be any value (though i would'nt recommend it)\
+set cpm: input a value to change the tempo, this can be any value (though i would'nt recommend setting this too high as it sounds wack)\
 Four check boxes: each check box contained to an instrument that is present in the music being played, this will mute/unmute the instrument based on its state\
 save: saves the combination of selected instruments - Json handling\
 load: loads the combination of saved instruments - Json handling\
 Text Process: contains the original text of instrument code\ 
 D3 Graph: D3 graph just for looks.\
+
+To Note: if page is loaded for too long some of these controls may not work properly. this also may happen when clicking the controls too quickly. if it looks like its not working properly re fresh the page
 
 
 
