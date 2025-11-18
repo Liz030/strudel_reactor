@@ -49,7 +49,7 @@ note(pick(basslines, bass))
 .lpf(700)
 .room(0.4)
 .postgain(pick(gain_patterns, pattern))
-.gain(1)
+.gain(1).log();
 
 
 main_arp: 
@@ -103,6 +103,6 @@ stack(
 )
 //Remixed and reproduced from Algorave Dave's code found here: https://www.youtube.com/watch?v=ZCcpWzhekEY
 // all(x => x.gain(mouseX.range(0,1)))
-// all(x => x.log())
+//all(x => x.log())
 
 // @version 1.2`;

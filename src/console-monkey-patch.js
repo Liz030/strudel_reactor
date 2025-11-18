@@ -12,8 +12,7 @@ export default function console_monkey_patch() {
     //Overwrite console.log function
     console.log = function (...args) {
         //Join args with space, default behaviour. Check for [hap], that's a strudel prefix
-        if (args.join(" ").substring(0, 8) === "%c[hap] ")
-        {
+        if (args.join(" ").substring(0, 8) === "%c[hap] ") {
 
             //If so, add it to the Array of values.
             //Then remove the oldest values once we've hit 100.

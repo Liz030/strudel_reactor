@@ -1,9 +1,8 @@
 
 
 function SoundControls({ items, onItemClick, onVolumeChange, onCPMChange }) {
-
     
-
+   
     return (
         <>
 

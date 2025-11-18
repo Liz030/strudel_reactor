@@ -1,4 +1,12 @@
+
+
+
+
 function playButtons({ onPlay, onStop }) {
+
+
+   
+
   return (
       <>
           <div>

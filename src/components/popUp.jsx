@@ -4,6 +4,8 @@ import SoundControl from './soundControls';
 function PopUp({ show, isChecked, onChange, items, onItemClick, onVolumeChange, onCPMChange }) {
     if (!show) return null;
 
+
+   
     
   return (
       <>
