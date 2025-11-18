@@ -13,7 +13,7 @@ D3 Graph: D3 graph just for looks.\
 
 To Note: if page is loaded for too long some of these controls may not work properly. this also may happen when clicking the controls too quickly. if it looks like its not working properly re fresh the page\\
 
-video link: https://vimeo.com/1138088229/5fc8d08f76?share=copy&fl=sv&fe=ci\
+video link: https://vimeo.com/1138088229/5fc8d08f76?share=copy&fl=sv&fe=ci
 
 
 
