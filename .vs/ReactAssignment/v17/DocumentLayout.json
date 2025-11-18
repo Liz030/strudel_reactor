@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\components\\soundcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\soundcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\components\\d3graph.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\d3graph.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\components\\popup.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\popup.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\components\\texttopreprocess.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\texttopreprocess.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\strudeldemo.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\strudeldemo.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|f:\\uni\\y2_sp5_inft2064_webtechnology\\assignment\\strudel_reactor\\src\\components\\playbuttons.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -66,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "tunes.js",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\tunes.js",
               "RelativeDocumentMoniker": "src\\tunes.js",
@@ -84,7 +68,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-18T12:16:38.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "StrudelDemo.js",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\StrudelDemo.js",
               "RelativeDocumentMoniker": "src\\StrudelDemo.js",
@@ -97,20 +94,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "App.css",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\App.css",
               "RelativeDocumentMoniker": "src\\App.css",
               "ToolTip": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\App.css",
               "RelativeToolTip": "src\\App.css",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-11-18T10:42:35.415Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "console-monkey-patch.js",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\console-monkey-patch.js",
               "RelativeDocumentMoniker": "src\\console-monkey-patch.js",
@@ -123,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "Preprocess.jsx",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\utility\\Preprocess.jsx",
               "RelativeDocumentMoniker": "src\\utility\\Preprocess.jsx",
@@ -136,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "musicControlButton.jsx",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\musicControlButton.jsx",
               "RelativeDocumentMoniker": "src\\components\\musicControlButton.jsx",
@@ -149,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "index.js",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\index.js",
               "RelativeDocumentMoniker": "src\\index.js",
@@ -161,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "reportWebVitals.js",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\reportWebVitals.js",
               "RelativeDocumentMoniker": "src\\reportWebVitals.js",
@@ -170,98 +167,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-04T13:07:26.883Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "04950ec4-e971-46cf-87f5-2911cbd98412",
-        "Display": 1,
-        "X": -955,
-        "Y": 363,
-        "Width": 2707,
-        "Height": 1189,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 252,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "popUp.jsx",
-              "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\popUp.jsx",
-              "RelativeDocumentMoniker": "src\\components\\popUp.jsx",
-              "ToolTip": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\popUp.jsx",
-              "RelativeToolTip": "src\\components\\popUp.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-17T14:43:08.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "textToPreprocess.jsx",
-              "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\textToPreprocess.jsx",
-              "RelativeDocumentMoniker": "src\\components\\textToPreprocess.jsx",
-              "ToolTip": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\textToPreprocess.jsx",
-              "RelativeToolTip": "src\\components\\textToPreprocess.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-18T08:52:13.843Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "d3Graph.jsx",
-              "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\d3Graph.jsx",
-              "RelativeDocumentMoniker": "src\\components\\d3Graph.jsx",
-              "ToolTip": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\d3Graph.jsx",
-              "RelativeToolTip": "src\\components\\d3Graph.jsx",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAgwFMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-18T09:19:23.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.js",
-              "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\App.js",
-              "RelativeDocumentMoniker": "src\\App.js",
-              "ToolTip": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\App.js",
-              "RelativeToolTip": "src\\App.js",
-              "ViewState": "AgIAALsAAAAAAAAAAAAuwMcAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-02T14:33:05.264Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 148,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "soundControls.jsx",
-              "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\soundControls.jsx",
-              "RelativeDocumentMoniker": "src\\components\\soundControls.jsx",
-              "ToolTip": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\soundControls.jsx",
-              "RelativeToolTip": "src\\components\\soundControls.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-17T14:43:23.217Z",
-              "EditorCaption": ""
             }
           ]
         }
@@ -286,7 +191,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "playButtons.jsx",
               "DocumentMoniker": "F:\\Uni\\Y2_SP5_INFT2064_WebTechnology\\assignment\\strudel_reactor\\src\\components\\playButtons.jsx",
               "RelativeDocumentMoniker": "src\\components\\playButtons.jsx",
