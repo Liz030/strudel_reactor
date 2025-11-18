@@ -1,10 +1,15 @@
+
 function textToPreprocess({ defaultValue, onChange }) {
+
+
+
   return (
       <>
          
-            
+          <br />  
+          <br/>
+          <h2 className='heading2'>Text to Preprocess: </h2><br />
          
-          <label htmlFor="exampleFormControlTextarea1" className="form-label">Text to preprocess:</label>
           <textarea className="form-control" rows="15" defaultValue={defaultValue} onChange={ onChange } id="proc" ></textarea>
       </>
   );

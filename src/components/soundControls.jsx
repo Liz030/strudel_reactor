@@ -2,17 +2,18 @@
 
 function SoundControls({ items, onItemClick, onVolumeChange, onCPMChange }) {
     
-   
+
+
     return (
         <>
 
             <div>
-
-                <label htmlFor="volume_range" className="form-label">volume</label>
-                <input type="range" className="form-range" min="0" max="2" step="0.01" onMouseUp={onVolumeChange} id="volume_range" />
+                <h1 className='heading'>Adjust volume</h1>
+                <label htmlFor="volume_range" className="form-label"></label>
+                <input type="range" className="range-slider" min="0" max="2" step="0.01" onMouseUp={onVolumeChange} id="volume_range" />
             </div>
 
-
+            <h1 className='heading'>Input CPM:</h1>
             <div className="input-group mb-3">
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="basic-addon1">Set CPM</span>
@@ -26,12 +27,12 @@ function SoundControls({ items, onItemClick, onVolumeChange, onCPMChange }) {
 
 
             <div>
-                <p>mute selected instruments</p>
+                <h1 className= 'heading'>Mute Selected Instruments:</h1>
                 <div>
                     {items.map((item) => (
                         <div key={item.id}>
                             <input className="form-check-input" type="checkbox" checked={item.checked} onChange={() => onItemClick(item.id)} />
-                            <label className="form-check-label" htmlFor={item.id}>itemName:{item.name} itemValue: {item.value} item replace: {item.replace} checkedStatus:{ item.checked ? 'checked' : "not checked"}</label>
+                            <label className="form-check-label" htmlFor={item.id}>{item.name} </label>
                         </div>
 
                     ))}

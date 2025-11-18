@@ -14,7 +14,7 @@ function PopUp({ show, isChecked, onChange, items, onItemClick, onVolumeChange, 
 
           <div className='popup-overlay'> 
            
-              <p>Music Controls:</p>
+              <h2 className='heading2'>Adjust Settings Below: </h2><br/>
 
               <SoundControl checked={isChecked} onChange={onChange} items={items} onItemClick={onItemClick} onVolumeChange={onVolumeChange} onCPMChange={onCPMChange} />
               

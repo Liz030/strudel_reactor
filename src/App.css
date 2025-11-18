@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+    text-align: center;
+    background-color: blueviolet;
 }
 
 .App-logo {
@@ -35,4 +36,72 @@
   to {
     transform: rotate(360deg);
   }
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #8f0d0d;
+}
+
+.mainPage {
+    background-color: #f5ebe4;
+}
+
+.form-check-input {
+    background-color: #007bff;
+    
+    padding: 10px 30px;
+    border: none;
+    
+    cursor: pointer;
+}
+
+.subText {
+    background-color: dimgray;
+}
+
+.heading {
+    color: #1c1b19;
+    font-size: 20px;
+}
+
+.heading2 {
+    color: #1c1b19;
+    font-size: 30px;
+}
+
+.popup-overlay {
+    background-color: #fcf7ed;
+    
+}
+
+.btn1 {
+    border: 3px solid #876ef0;
+    padding: 20px 20px;
+    border-radius: 60px;
+}
+
+.btnsave {
+    border: 3px dashed #876ef0;
+    padding: 10px 20px;
+    border-radius: 60px;
+}
+
+.btnload {
+    border: 3px dashed #876ef0;
+    padding: 10px 20px;
+    border-radius: 60px;
+}
+
+.btnPlay {
+    border: 5px solid #b4e332;
+    padding: 30px 30px;
+    border-radius: 60px;
+}
+.btnStop {
+    border: 5px solid #f5761d;
+    padding: 30px 30px;
+    border-radius: 60px;
 }
